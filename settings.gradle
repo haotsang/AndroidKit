@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidKit"
 include ':app'
+include ':androidkit-java'
+include ':androidkit-kotlin'
