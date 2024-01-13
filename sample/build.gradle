@@ -5,12 +5,12 @@ plugins {
 apply from: '../dependencies.gradle'
 
 android {
-    namespace 'com.haotsang.androidkit'
+    namespace 'com.haotsang.sample'
 
 
     defaultConfig {
-        applicationId "com.haotsang.androidkit"
-        
+        applicationId "com.haotsang.sample"
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,5 +29,4 @@ dependencies {
 
     implementation project(':common-java')
     implementation project(':common-kotlin')
-
 }

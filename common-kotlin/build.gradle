@@ -1,18 +1,15 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
-apply from: '../dependencies.gradle'
+apply plugin: 'com.android.library'
+apply from:'../dependencies.gradle'
 
 android {
-    namespace 'com.haotsang.androidkit'
+    namespace 'com.haotsang.androidkit_kotlin'
 
-
+    
     defaultConfig {
-        applicationId "com.haotsang.androidkit"
-        
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -27,7 +24,5 @@ android {
 
 dependencies {
 
-    implementation project(':common-java')
-    implementation project(':common-kotlin')
 
 }
