@@ -4,9 +4,24 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.os.Build
+import android.provider.Settings
+import android.text.TextUtils
 import android.text.format.DateUtils
-import com.haotsang.androidkit_kotlin.R
+import com.haotsang.common_kotlin.R
 import java.util.Locale
+
+/**
+ * 获取屏幕宽度
+ */
+val Context.screenWidth
+    get() = resources.displayMetrics.widthPixels
+
+/**
+ * 获取屏幕高度
+ */
+val Context.screenHeight
+    get() = resources.displayMetrics.heightPixels
+
 
 val Context.versionName: String
     get() = packageManager.getPackageInfo(packageName, 0).versionName
@@ -57,4 +72,25 @@ fun Context.getRelativeTimeDisplayString(referenceTime: Long): CharSequence? {
             now,
             DateUtils.MINUTE_IN_MILLIS,
             DateUtils.FORMAT_ABBREV_RELATIVE)
+}
+
+
+/**
+ * 检查是否启用无障碍服务
+ */
+fun Context.checkAccessibilityServiceEnabled(serviceName: String): Boolean {
+    val settingValue =
+        Settings.Secure.getString(
+            applicationContext.contentResolver,
+            Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+        )
+    var result = false
+    val splitter = TextUtils.SimpleStringSplitter(':')
+    while (splitter.hasNext()) {
+        if (splitter.next().equals(serviceName, true)) {
+            result = true
+            break
+        }
+    }
+    return result
 }
