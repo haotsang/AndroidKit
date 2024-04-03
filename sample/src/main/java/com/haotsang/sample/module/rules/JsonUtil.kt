@@ -1,9 +1,9 @@
-package com.haotsang.sample.rules
+package com.haotsang.sample.module.rules
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.haotsang.sample.rules.data.ActionDetail
-import com.haotsang.sample.rules.data.ConditionDetail
+import com.haotsang.sample.module.rules.data.ActionDetail
+import com.haotsang.sample.module.rules.data.ConditionDetail
 
 object JsonUtil {
 

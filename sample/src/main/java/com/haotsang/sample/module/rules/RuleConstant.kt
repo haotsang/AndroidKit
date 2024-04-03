@@ -1,4 +1,4 @@
-package com.haotsang.sample.rules
+package com.haotsang.sample.module.rules
 
 import java.util.Collections
 

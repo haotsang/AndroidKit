@@ -1,4 +1,4 @@
-package com.haotsang.sample.rules
+package com.haotsang.sample.module.rules
 
 import android.content.Context
 import android.os.Handler
@@ -7,7 +7,7 @@ import android.os.Message
 import android.util.Log
 import android.widget.Toast
 import com.google.gson.Gson
-import com.haotsang.sample.rules.data.ActionTypeEnum
+import com.haotsang.sample.module.rules.data.ActionTypeEnum
 
 class ActionHandler(val activity: Context) : Handler(Looper.getMainLooper()) {
     private val TAG = "ActionHandler"

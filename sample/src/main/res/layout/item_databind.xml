@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="com.haotsang.sample.theme.AppTheme"/>
+        <import type="com.haotsang.sample.module.theme.AppTheme"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.haotsang.sample.rules
+package com.haotsang.sample.module.rules
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Message
 import android.util.Log
 import com.google.gson.Gson
-import com.haotsang.sample.rules.data.Instruct
+import com.haotsang.sample.module.rules.data.Instruct
 import org.jeasy.rules.annotation.Action
 import org.jeasy.rules.annotation.Condition
 import org.jeasy.rules.annotation.Rule

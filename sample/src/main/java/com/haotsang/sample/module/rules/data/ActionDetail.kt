@@ -1,4 +1,4 @@
-package com.haotsang.sample.rules.data
+package com.haotsang.sample.module.rules.data
 
 data class ActionDetail (
     var actionName: String,

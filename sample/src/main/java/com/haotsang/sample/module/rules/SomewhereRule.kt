@@ -1,6 +1,6 @@
-package com.haotsang.sample.rules
+package com.haotsang.sample.module.rules
 
-import com.haotsang.sample.rules.data.ConditionDetail
+import com.haotsang.sample.module.rules.data.ConditionDetail
 import org.jeasy.rules.annotation.Action
 import org.jeasy.rules.annotation.Condition
 import org.jeasy.rules.annotation.Rule

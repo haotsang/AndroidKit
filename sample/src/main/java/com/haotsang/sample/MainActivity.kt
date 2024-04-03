@@ -9,8 +9,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.haotsang.common_kotlin.base.BaseActivity
 import com.haotsang.sample.databinding.ActivityMainBinding
 import com.haotsang.sample.di.DataCreator
-import com.haotsang.sample.fragment.RuleFragment
-import com.haotsang.sample.theme.ThemeFragment
+import com.haotsang.sample.module.theme.ThemeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -30,7 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val mAdapter = ListAdapter(list)
         mAdapter.setOnItemClickListener { adapter, view, position ->
             when (position) {
-                0 -> switchFragment(RuleFragment())
+//                0 -> switchFragment(RuleFragment())
                 1 -> {
                     if (Build.VERSION.SDK_INT < 26) {
                         return@setOnItemClickListener

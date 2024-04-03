@@ -1,4 +1,4 @@
-package com.haotsang.sample.theme
+package com.haotsang.sample.module.theme
 
 import android.os.Build
 import android.os.Bundle

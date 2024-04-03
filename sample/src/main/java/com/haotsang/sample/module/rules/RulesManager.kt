@@ -1,11 +1,11 @@
-package com.haotsang.sample.rules
+package com.haotsang.sample.module.rules
 
 import android.content.Context
 import android.os.Bundle
 import android.os.Message
-import com.haotsang.sample.rules.data.ConditionDetail
-import com.haotsang.sample.rules.data.ConditionTypeEnum
-import com.haotsang.sample.rules.data.Instruct
+import com.haotsang.sample.module.rules.data.ConditionDetail
+import com.haotsang.sample.module.rules.data.ConditionTypeEnum
+import com.haotsang.sample.module.rules.data.Instruct
 import org.jeasy.rules.api.Facts
 import org.jeasy.rules.api.Rule
 import org.jeasy.rules.api.Rules

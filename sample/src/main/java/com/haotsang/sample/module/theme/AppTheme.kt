@@ -1,4 +1,4 @@
-package com.haotsang.sample.theme
+package com.haotsang.sample.module.theme
 
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList

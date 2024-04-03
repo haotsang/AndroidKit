@@ -1,4 +1,4 @@
-package com.haotsang.sample.rules.data
+package com.haotsang.sample.module.rules.data
 
 
 enum class ActionTypeEnum {
