@@ -3,4 +3,7 @@
 
     <string name="android_ago_just_now">Ago</string>
 
+    <string name="loading">Loading...</string>
+    <string name="empty">Empty</string>
+
 </resources>
