@@ -1,13 +1,12 @@
 package com.haotsang.sample.module.state
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import com.haotsang.common_kotlin.base.BaseFragment
-import com.haotsang.common_kotlin.base.StatusData
-import com.haotsang.common_kotlin.utils.ext.collectWhile
+import com.haotsang.common.base.BaseFragment
+import com.haotsang.common.base.StatusData
+import com.haotsang.common.utils.ext.collectWhile
 import com.haotsang.sample.R
 import com.haotsang.sample.databinding.FragmentThemeBinding
 import kotlinx.coroutines.flow.MutableStateFlow

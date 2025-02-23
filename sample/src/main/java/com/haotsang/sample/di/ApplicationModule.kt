@@ -1,9 +1,7 @@
 package com.haotsang.sample.di
 
-import android.app.Application
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.haotsang.common_kotlin.format.gson.GsonFactory
+import com.haotsang.common.format.gson.GsonFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

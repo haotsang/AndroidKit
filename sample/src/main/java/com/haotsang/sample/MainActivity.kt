@@ -6,11 +6,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.haotsang.common_kotlin.base.BaseActivity
+import com.haotsang.common.base.BaseActivity
 import com.haotsang.sample.databinding.ActivityMainBinding
 import com.haotsang.sample.di.DataCreator
 import com.haotsang.sample.module.state.StateFragment
-import com.haotsang.sample.module.theme.ThemeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

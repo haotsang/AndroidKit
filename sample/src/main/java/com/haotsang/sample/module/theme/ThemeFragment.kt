@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.haotsang.common_kotlin.utils.ext.dp
+import com.haotsang.common.utils.ext.dp
 import com.haotsang.sample.R
 import com.haotsang.sample.databinding.FragmentThemeBinding
 
