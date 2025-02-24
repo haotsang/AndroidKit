@@ -24,7 +24,11 @@ sealed class StatusData<out T> {
 
     data object Idle : StatusData<Nothing>()
 
-    fun isSuccess(): Boolean = this is Success
+    fun isEmpty(): Boolean = this is Empty
+
+    fun isLoading(): Boolean = this is Loading
+
+    fun isSuccess(): Boolean = this is Success && this.data != null
 }
 
 

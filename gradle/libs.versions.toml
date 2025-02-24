@@ -12,6 +12,9 @@ espressoCore = "3.5.1"
 lifecycleKtx = "2.6.2"
 activityCompose = "1.8.0"
 composeBom = "2024.04.01"
+media3 = "1.4.1"
+androidx-activity = "1.7.2"
+androidx-fragment = "1.6.1"
 retrofit = "2.9.0"
 gson = "2.10.1"
 appcompat = "1.6.1"
@@ -49,6 +52,7 @@ exoplayer-ui = { module = "com.google.android.exoplayer:exoplayer-ui", version.r
 
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 #androidx
@@ -61,6 +65,10 @@ swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout"
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleKtx" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleKtx" }
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleKtx" }
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment" }
+androidx-media3-session = { module = "androidx.media3:media3-session", version.ref = "media3" }
+
 
 #Compose
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }

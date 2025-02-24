@@ -84,9 +84,9 @@ public class BitmapUtils {
             // 获取图片的旋转信息
             int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
             switch (orientation) {
-                case ExifInterface.ORIENTATION_ROTATE_90 -> degree = 90;
-                case ExifInterface.ORIENTATION_ROTATE_180 -> degree = 180;
-                case ExifInterface.ORIENTATION_ROTATE_270 -> degree = 270;
+//                case ExifInterface.ORIENTATION_ROTATE_90 -> degree = 90;
+//                case ExifInterface.ORIENTATION_ROTATE_180 -> degree = 180;
+//                case ExifInterface.ORIENTATION_ROTATE_270 -> degree = 270;
             }
         } catch (IOException e) {
             e.printStackTrace();

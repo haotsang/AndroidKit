@@ -25,6 +25,14 @@ android {
         }
     }
 
+    libraryVariants.all {
+        outputs.all {
+            if (this is com.android.build.gradle.internal.api.BaseVariantOutputImpl) {
+                this.outputFileName = "lib-common.aar"
+            }
+        }
+    }
+
     buildFeatures {
         viewBinding = true
         dataBinding = true
@@ -43,6 +51,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.exoplayer.core)
 
     // androidx
     implementation(libs.androidx.core.ktx)
