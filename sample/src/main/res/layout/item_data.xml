@@ -11,7 +11,7 @@
 
         <variable
             name="item"
-            type="com.haotsang.collapsing_recyclerview.core.Data" />
+            type="com.haotsang.sample.module.collapsingRecyclerview.Data" />
     </data>
 
     <LinearLayout

@@ -1,8 +1,8 @@
-package com.haotsang.collapsing_recyclerview.core
+package com.haotsang.sample.module.collapsingRecyclerview
 
 
 
-data class Section(
+data class Section<T>(
     val headerTitle: String,
     val list: List<Data>,
 
@@ -11,11 +11,11 @@ data class Section(
 
     fun count() = list.size
 
-    fun cloneStatusTo(other: Section) {
+    fun cloneStatusTo(other: Section<T>) {
         other.isFold = isFold
     }
 
-    fun clone(): Section {
+    fun clone(): Section<T> {
         return Section(headerTitle, list, isFold)
     }
 }

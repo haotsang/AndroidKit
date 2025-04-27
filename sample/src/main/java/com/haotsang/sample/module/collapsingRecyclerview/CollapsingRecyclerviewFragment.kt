@@ -1,32 +1,24 @@
-package com.haotsang.collapsing_recyclerview
+package com.haotsang.sample.module.collapsingRecyclerview
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.haotsang.collapsing_recyclerview.core.Data
-import com.haotsang.collapsing_recyclerview.core.FoldAdapter
-import com.haotsang.collapsing_recyclerview.core.Section
+import com.haotsang.common.base.BaseBindingFragment
+import com.haotsang.sample.R
+import com.haotsang.sample.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+class CollapsingRecyclerviewFragment : BaseBindingFragment<ActivityMainBinding>(R.layout.activity_main) {
 
-        initViews()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    }
 
-    private fun initViews() {
         val adapter = FoldAdapter()
         adapter.apply {
             adapter.setData(fakeData())
@@ -37,12 +29,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        val rvList = findViewById<RecyclerView>(R.id.rv_list)
-        rvList.layoutManager = LinearLayoutManager(this)
-        rvList.adapter = adapter
+        mBinding?.rvList?.layoutManager = LinearLayoutManager(requireContext())
+        mBinding?.rvList?.adapter = adapter
     }
 
-    private fun fakeData(): MutableList<Section> {
+    private fun fakeData(): MutableList<Section<Data>> {
         val arrays = arrayOf(
             Data("2024-5-4", "4", "4-1"),
             Data("2024-5-4", "4", "4-2"),
@@ -64,11 +55,12 @@ class MainActivity : AppCompatActivity() {
         )
 
 
-        val data = ArrayList<Section>()
+        val data = ArrayList<Section<Data>>()
         arrays.groupBy { it.time }.forEach {
             val headerTitle = it.key
             val items = it.value
-            val section = Section(headerTitle, items, true)
+            val section =
+                Section<Data>(headerTitle, items, true)
             data.add(section)
         }
 

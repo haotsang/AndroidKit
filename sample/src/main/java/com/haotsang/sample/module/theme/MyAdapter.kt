@@ -9,7 +9,7 @@ import com.haotsang.sample.R
 import com.haotsang.sample.databinding.ItemDatabindBinding
 
 
-class MyAdapter(private val  context: Context, private val lifecycle: LifecycleOwner) :
+class MyAdapter(context: Context, lifecycle: LifecycleOwner) :
     BaseBindingAdapter<String, ItemDatabindBinding>(context, lifecycle) {
 
     override fun getLayout(viewType: Int): Int {

@@ -25,5 +25,4 @@ rootProject.name = "AndroidKit"
 include(":app")
 include(":common")
 include(":sample")
-include(":CollapsingRecyclerView")
 include(":RulesEngine")

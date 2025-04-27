@@ -1,4 +1,4 @@
-package com.haotsang.collapsing_recyclerview.core
+package com.haotsang.sample.module.collapsingRecyclerview
 
 data class Data(
     val time: String,

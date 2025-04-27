@@ -1,4 +1,4 @@
-package com.haotsang.collapsing_recyclerview.core
+package com.haotsang.sample.module.collapsingRecyclerview
 
 import android.util.SparseArray
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.haotsang.collapsing_recyclerview.databinding.ItemDataBinding
-import com.haotsang.collapsing_recyclerview.databinding.ItemHeaderBinding
+import com.haotsang.sample.databinding.ItemDataBinding
+import com.haotsang.sample.databinding.ItemHeaderBinding
 
 
 class FoldAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -16,8 +16,8 @@ class FoldAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val ITEM_TYPE_SECTION_ITEM = 1
     }
 
-    private val mLastData: MutableList<Section> = ArrayList()
-    private val mData: MutableList<Section> = ArrayList()
+    private val mLastData: MutableList<Section<Data>> = ArrayList()
+    private val mData: MutableList<Section<Data>> = ArrayList()
 
     private val mSectionIndex: SparseArray<Int> = SparseArray()
     private val mItemIndex: SparseArray<Int> = SparseArray()
@@ -33,7 +33,7 @@ class FoldAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         this.onItemChildClickListener = onItemChildClickListener
     }
 
-    fun setData(list: MutableList<Section>) {
+    fun setData(list: MutableList<Section<Data>>) {
         mData.clear()
         mData.addAll(list)
         diff(true)
@@ -164,7 +164,7 @@ class FoldAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class HeaderViewHolder(val binding: ItemHeaderBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Section) {
+        fun bind(item: Section<Data>) {
             binding.item = item
             binding.executePendingBindings()
         }

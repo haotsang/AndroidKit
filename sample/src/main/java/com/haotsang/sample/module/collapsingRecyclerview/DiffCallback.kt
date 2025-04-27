@@ -1,10 +1,11 @@
-package com.haotsang.collapsing_recyclerview.core
+package com.haotsang.sample.module.collapsingRecyclerview
 
 import android.util.SparseArray
 import androidx.recyclerview.widget.DiffUtil
 import kotlin.math.min
+import androidx.core.util.size
 
-class DiffCallback(private val oldList: List<Section>, private val newList: List<Section>) : DiffUtil.Callback() {
+class DiffCallback<T>(private val oldList: List<Section<T>>, private val newList: List<Section<T>>) : DiffUtil.Callback() {
 
     private val mOldSectionIndex: SparseArray<Int> = SparseArray()
     private val mOldItemIndex: SparseArray<Int> = SparseArray()
@@ -42,9 +43,9 @@ class DiffCallback(private val oldList: List<Section>, private val newList: List
         return oldModel.list[oldItemIndex] == newModel.list[newItemIndex]
     }
 
-    override fun getOldListSize() = mOldSectionIndex.size()
+    override fun getOldListSize() = mOldSectionIndex.size
 
-    override fun getNewListSize() = mNewSectionIndex.size()
+    override fun getNewListSize() = mNewSectionIndex.size
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
 
@@ -80,9 +81,10 @@ class DiffCallback(private val oldList: List<Section>, private val newList: List
 
     companion object {
         const val ITEM_INDEX_SECTION_HEADER = -1
+        const val LIST_SPAN_LIMIT_COUNT = 3
 
-        fun  generateIndex(
-            list: List<Section>,
+        fun <T> generateIndex(
+            list: List<Section<T>>,
             sectionIndex: SparseArray<Int>,
             itemIndex: SparseArray<Int>
         ) {
@@ -94,7 +96,7 @@ class DiffCallback(private val oldList: List<Section>, private val newList: List
                 itemIndex.append(i, ITEM_INDEX_SECTION_HEADER)
                 i++
 
-                val count = if (!it.isFold) it.count() else min(Constants.LIST_SPAN_LIMIT_COUNT, it.count())
+                val count = if (!it.isFold) it.count() else min(LIST_SPAN_LIMIT_COUNT, it.count())
                 for (j in 0 until count) {
                     sectionIndex.append(i, index)
                     itemIndex.append(i, j)

@@ -9,7 +9,7 @@
 
         <variable
             name="item"
-            type="com.haotsang.collapsing_recyclerview.core.Section" />
+            type="com.haotsang.sample.module.collapsingRecyclerview.Section" />
 
         <variable
             name="isFold"

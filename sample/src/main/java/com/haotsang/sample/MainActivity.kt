@@ -13,6 +13,7 @@ import com.haotsang.sample.databinding.ActivityMainBinding
 import com.haotsang.sample.databinding.ItemBaseQuickAdapterBinding
 import com.haotsang.sample.databinding.ItemDatabindBinding
 import com.haotsang.sample.di.DataCreator
+import com.haotsang.sample.module.collapsingRecyclerview.CollapsingRecyclerviewFragment
 import com.haotsang.sample.module.component.BlurOverlayFragment
 import com.haotsang.sample.module.component.WickedGradientDrawableFragment
 import com.haotsang.sample.module.theme.ThemeFragment
@@ -37,7 +38,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
             "PID",
             "Theme",
             "WickedGradientDrawable",
-            "BlurOverlay"
+            "BlurOverlay",
+            "CollapsingRecyclerview",
         )
         val mAdapter = ListAdapter(this, this)
         mAdapter.setData(list)
@@ -80,6 +82,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 3 -> switchFragment(ThemeFragment())
                 4 -> switchFragment(WickedGradientDrawableFragment())
                 5 -> switchFragment(BlurOverlayFragment())
+                6 -> switchFragment(CollapsingRecyclerviewFragment())
 
 
                 else -> {
