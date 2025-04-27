@@ -52,6 +52,11 @@ dependencies {
 
     implementation(libs.gson)
 
+    // lifecycle
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
     // androidx
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

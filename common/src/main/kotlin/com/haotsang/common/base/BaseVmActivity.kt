@@ -27,7 +27,7 @@ abstract class BaseVmActivity<T : ViewDataBinding, M : BaseViewModel> : AppCompa
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         databinding.lifecycleOwner = this
-        databinding.setVariable(BR.vm, viewModel)
+//        databinding.setVariable(BR.vm, viewModel)
     }
 
 

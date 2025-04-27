@@ -33,41 +33,41 @@ class StateFragment : BaseFragment<FragmentThemeBinding>(FragmentThemeBinding::i
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val rvList = mBinding!!.rvGroup
-
-        meetings.collectWhile(this, Lifecycle.State.RESUMED) {
-            when (it) {
-                is StatusData.Loading -> {
-                    rvList.visibility = View.GONE
-                    showLoading(R.id.root)
-                }
-                is StatusData.Error -> {
-                    rvList.visibility = View.GONE
-                    showError(containerViewId = R.id.root, error = it.exception.message)
-                }
-                is StatusData.Empty -> {
-                    rvList.visibility = View.GONE
-                    showEmpty(R.id.root)
-                }
-                is StatusData.Success<List<String>> -> {
-                    hideLoading()
-                    hideEmpty()
-                    hideError()
-
-                    rvList.visibility = View.VISIBLE
-                    //set data
-                    val list:List<String> = it.data
-                }
-                is StatusData.Idle -> {
-                    hideLoading()
-                }
-            }
-        }
-
-    }
-
-    override fun onRetry() {
-        super.onRetry()
+//        val rvList = mBinding!!.rvGroup
+//
+//        meetings.collectWhile(this, Lifecycle.State.RESUMED) {
+//            when (it) {
+//                is StatusData.Loading -> {
+//                    rvList.visibility = View.GONE
+////                    showLoading(R.id.root)
+//                }
+//                is StatusData.Error -> {
+//                    rvList.visibility = View.GONE
+////                    showError(containerViewId = R.id.root, error = it.exception.message)
+//                }
+//                is StatusData.Empty -> {
+//                    rvList.visibility = View.GONE
+////                    showEmpty(R.id.root)
+//                }
+//                is StatusData.Success<List<String>> -> {
+////                    hideLoading()
+////                    hideEmpty()
+////                    hideError()
+//
+//                    rvList.visibility = View.VISIBLE
+//                    //set data
+//                    val list:List<String> = it.data
+//                }
+//                is StatusData.Idle -> {
+////                    hideLoading()
+//                }
+//            }
+//        }
 
     }
+
+//    override fun onRetry() {
+//        super.onRetry()
+//
+//    }
 }

@@ -1,15 +1,21 @@
 package com.haotsang.sample
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.haotsang.common.base.BaseActivity
+import com.haotsang.common.base.BaseBindingAdapter
+import com.haotsang.common.base.BaseBindingViewHolder
 import com.haotsang.sample.databinding.ActivityMainBinding
+import com.haotsang.sample.databinding.ItemBaseQuickAdapterBinding
+import com.haotsang.sample.databinding.ItemDatabindBinding
 import com.haotsang.sample.di.DataCreator
-import com.haotsang.sample.module.state.StateFragment
+import com.haotsang.sample.module.component.BlurOverlayFragment
+import com.haotsang.sample.module.component.WickedGradientDrawableFragment
+import com.haotsang.sample.module.theme.ThemeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -25,10 +31,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     override fun initialize() {
         super.initialize()
 
-        val list = mutableListOf("Ball", "CID", "PID", "Theme")
-        val mAdapter = ListAdapter(list)
-        mAdapter.setOnItemClickListener { adapter, view, position ->
-            when (position) {
+        val list = mutableListOf(
+            "Ball",
+            "CID",
+            "PID",
+            "Theme",
+            "WickedGradientDrawable",
+            "BlurOverlay"
+        )
+        val mAdapter = ListAdapter(this, this)
+        mAdapter.setData(list)
+        mAdapter.setOnItemClickListener { s, i ->
+            when (i) {
 //                0 -> switchFragment(RuleFragment())
                 1 -> {
                     if (Build.VERSION.SDK_INT < 26) {
@@ -63,7 +77,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                     sendBroadcast(intent)
                 }
 
-                3 -> switchFragment(StateFragment())
+                3 -> switchFragment(ThemeFragment())
+                4 -> switchFragment(WickedGradientDrawableFragment())
+                5 -> switchFragment(BlurOverlayFragment())
+
 
                 else -> {
 
@@ -81,15 +98,23 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     private fun switchFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .add(android.R.id.content, fragment)
+            .replace(android.R.id.content, fragment)
             .addToBackStack(null)
             .commitAllowingStateLoss()
     }
 
-    private class ListAdapter(list: MutableList<String>) :
-        BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_base_quick_adapter, list) {
-        override fun convert(holder: BaseViewHolder, item: String) {
-            holder.setText(R.id.text1, item)
+    private class ListAdapter(context: Context, lifecycleOwner: LifecycleOwner) :
+        BaseBindingAdapter<String, ItemBaseQuickAdapterBinding>(context, lifecycleOwner) {
+        override fun getLayout(viewType: Int): Int {
+            return R.layout.item_base_quick_adapter
+        }
+        override fun onBindData(
+            binding: ItemBaseQuickAdapterBinding,
+            holder: BaseBindingViewHolder,
+            data: String,
+            position: Int
+        ) {
+            binding.text1.text = data
         }
     }
 }

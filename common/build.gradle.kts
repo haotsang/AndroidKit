@@ -70,6 +70,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
+    // glide
+    api(libs.glide)
+//    api(libs.glide.compiler)
+
+
     // test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

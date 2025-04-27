@@ -7,6 +7,7 @@ import android.widget.SeekBar
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.haotsang.common.utils.ext.dp
@@ -99,14 +100,18 @@ class ThemeFragment : Fragment(R.layout.fragment_theme) {
         binding.btnDay.bringToFront()
         binding.btnNight.bringToFront()
 
-        val mAdapter = MyAdapter()
-        mAdapter.setOnItemClickListener { adapter, view, position ->
-//            ThemeAdapter.forceRecycler(binding.rvList, true)
-//            adapter.notifyDataSetChanged()
-        }
-        mAdapter.setNewInstance(mutableListOf<String>("121131", "121131"))
+        val mAdapter = MyAdapter(requireContext(), this)
+        mAdapter.setData(
+            mutableListOf(
+                "121131",
+                "121131",
+                "121131",
+                "121131",
+                "121131",
+            )
+        )
         binding.rvList.run {
-            layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+            layoutManager = GridLayoutManager(requireContext(), 3)
             adapter = mAdapter
         }
     }

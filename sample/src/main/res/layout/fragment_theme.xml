@@ -40,7 +40,6 @@
                 android:id="@+id/rv_list"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:forceRecycler="@{AppTheme.INSTANCE.background}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             <SeekBar
                 android:id="@+id/seekbar"

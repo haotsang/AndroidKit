@@ -64,31 +64,4 @@ object ThemeAdapter {
         view.progressBackgroundTintList = value
     }
 
-    @BindingAdapter("forceRecycler")
-    @JvmStatic
-    fun forceRecycler(mRecyclerView: RecyclerView, value: ColorStateList?) {
-//        Toast.makeText(mRecyclerView.context, "value", Toast.LENGTH_SHORT).show()
-
-        mRecyclerView.adapter?.notifyDataSetChanged()
-
-
-
-        val recyclerViewClass =
-            RecyclerView::class.java
-        try {
-            val declaredField = recyclerViewClass.getDeclaredField("mRecycler")
-            declaredField.isAccessible = true
-            val declaredMethod = Class.forName(RecyclerView.Recycler::class.java.name)
-                .getDeclaredMethod("clear", *arrayOfNulls<Class<*>?>(0))
-            declaredMethod.isAccessible = true
-            declaredMethod.invoke(declaredField[mRecyclerView], *arrayOfNulls<Any>(0))
-            val recycledViewPool: RecyclerView.RecycledViewPool =
-                mRecyclerView.recycledViewPool
-            recycledViewPool.clear()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-
 }
