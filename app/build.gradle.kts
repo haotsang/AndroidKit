@@ -6,14 +6,14 @@ plugins {
 
 android {
     namespace = "com.haotsang.androidkit"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    compileSdk = providers.gradleProperty("compileSdk").get().toInt()
 
     defaultConfig {
         applicationId = "com.haotsang.androidkit"
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = providers.gradleProperty("minSdk").get().toInt()
+        targetSdk = providers.gradleProperty("targetSdk").get().toInt()
+        versionCode = providers.gradleProperty("VERSIONCODE").get().toInt()
+        versionName = providers.gradleProperty("VERSIONNAME").get()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 

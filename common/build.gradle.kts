@@ -6,10 +6,10 @@ plugins {
 
 android {
     namespace = "com.haotsang.common"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    compileSdk = providers.gradleProperty("compileSdk").get().toInt()
 
     defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
+        minSdk = providers.gradleProperty("minSdk").get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

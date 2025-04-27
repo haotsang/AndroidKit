@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "me.haotsang.app.rules_engine"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    compileSdk = providers.gradleProperty("compileSdk").get().toInt()
 
     defaultConfig {
         applicationId = "me.haotsang.app.rules_engine"
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = providers.gradleProperty("minSdk").get().toInt()
+        targetSdk = providers.gradleProperty("targetSdk").get().toInt()
+        versionCode = providers.gradleProperty("VERSIONCODE").get().toInt()
+        versionName = providers.gradleProperty("VERSIONNAME").get()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
