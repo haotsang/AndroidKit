@@ -15,7 +15,7 @@ abstract class BaseBindingAdapter<T : Any, M : ViewDataBinding> constructor(
     private val mLifecycleOwner: LifecycleOwner
 ) : RecyclerView.Adapter<BaseBindingViewHolder>() {
 
-    val mData: MutableList<T> = mutableListOf()
+    private val mData: MutableList<T> = mutableListOf()
 
     private var mOnItemClickListener: ((T, Int) -> Unit)? = null
     private var mOnItemChildClickListener: MutableList<OnItemChildClickListener>? = null

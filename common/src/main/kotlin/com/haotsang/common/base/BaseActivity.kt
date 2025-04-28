@@ -13,6 +13,7 @@ import androidx.viewbinding.ViewBinding
  *  ```
  */
 
+@Deprecated("Use BaseVmActivity instead")
 abstract class BaseActivity<VB : ViewBinding>(private val inflate: (LayoutInflater) -> VB) : AppCompatActivity() {
 
     protected open lateinit var mBinding: VB

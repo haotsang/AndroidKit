@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
+@Deprecated("Use BaseVmFragment instead")
 abstract class BaseFragment<VB : ViewBinding>(private val inflate: (LayoutInflater) -> VB) : Fragment() {
 
     private var binding: VB? = null

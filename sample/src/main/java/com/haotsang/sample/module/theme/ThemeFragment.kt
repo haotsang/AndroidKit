@@ -18,11 +18,10 @@ import com.haotsang.sample.databinding.FragmentThemeBinding
 class ThemeFragment : Fragment(R.layout.fragment_theme) {
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = DataBindingUtil.bind<FragmentThemeBinding>(view)!!
-
+        binding.fragment = this
         binding.lifecycleOwner = this
 
         binding.tvIndex.apply {
@@ -91,15 +90,6 @@ class ThemeFragment : Fragment(R.layout.fragment_theme) {
 
         }
 
-
-        binding.btnDefault.setOnClickListener { AppTheme.update(Themes.Default) }
-        binding.btnDay.setOnClickListener { AppTheme.update(Themes.Day) }
-        binding.btnNight.setOnClickListener { AppTheme.update(Themes.Night) }
-
-        binding.btnDefault.bringToFront()
-        binding.btnDay.bringToFront()
-        binding.btnNight.bringToFront()
-
         val mAdapter = MyAdapter(requireContext(), this)
         mAdapter.setData(
             mutableListOf(
@@ -117,6 +107,13 @@ class ThemeFragment : Fragment(R.layout.fragment_theme) {
     }
 
 
+    fun onClick(index: Int) {
+        when (index) {
+            0 -> AppTheme.update(Themes.Default)
+            1 -> AppTheme.update(Themes.Day)
+            2 -> AppTheme.update(Themes.Night)
+        }
+    }
 
 
 

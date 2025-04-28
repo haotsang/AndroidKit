@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
+@Deprecated("Use BaseVmFragment instead")
 abstract class BaseBindingFragment<VB : ViewDataBinding>(@LayoutRes private val layoutId: Int) : Fragment() {
 
     private var binding: VB? = null

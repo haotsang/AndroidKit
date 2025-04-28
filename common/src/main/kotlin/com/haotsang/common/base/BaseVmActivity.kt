@@ -23,11 +23,9 @@ abstract class BaseVmActivity<T : ViewDataBinding, M : BaseViewModel> : AppCompa
         DataBindingUtil.setContentView(this, layoutId)
     }
 
-    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         databinding.lifecycleOwner = this
-//        databinding.setVariable(BR.vm, viewModel)
     }
 
 

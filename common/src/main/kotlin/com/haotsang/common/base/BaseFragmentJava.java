@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
+@Deprecated(since = "Use BaseVmFragment instead")
 public abstract class BaseFragmentJava<VB extends ViewBinding> extends Fragment {
 
     protected VB mBinding;

@@ -1,5 +1,6 @@
 package com.haotsang.common.utils
 
+import android.util.Log
 import android.view.View
 import androidx.databinding.BindingAdapter
 
@@ -37,6 +38,7 @@ object ViewThrottleBindingAdapter {
                 mLastTime = currentTime
                 // 调用点击方法
                 callback.onClick(v)
+                Log.d("ViewThrottleBindingAdapter", "onClick: ${v?.id}")
             }
         }
 

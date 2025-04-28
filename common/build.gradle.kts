@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.kapt)
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -70,9 +71,13 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
+    // di
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
     // glide
     api(libs.glide)
-//    api(libs.glide.compiler)
+//    kapt(libs.glide.compiler)
 
 
     // test

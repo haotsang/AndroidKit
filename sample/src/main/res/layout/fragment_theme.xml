@@ -6,6 +6,10 @@
     <data>
 
         <import type="com.haotsang.sample.module.theme.AppTheme" />
+
+        <variable
+            name="fragment"
+            type="com.haotsang.sample.module.theme.ThemeFragment" />
     </data>
 
     <FrameLayout
@@ -76,6 +80,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:src="@android:drawable/ic_btn_speak_now"
+                    android:onClick="@{()-> fragment.onClick(0)}"
                     app:tint="@{AppTheme.INSTANCE.content}" />
 
                 <ImageView
@@ -84,6 +89,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:src="@android:drawable/ic_btn_speak_now"
+                    android:onClick="@{()-> fragment.onClick(1)}"
                     app:tint="@{AppTheme.INSTANCE.content}" />
 
                 <ImageView
@@ -92,6 +98,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:src="@android:drawable/ic_btn_speak_now"
+                    android:onClick="@{()-> fragment.onClick(2)}"
                     app:tint="@{AppTheme.INSTANCE.content}" />
             </LinearLayout>
         </LinearLayout>

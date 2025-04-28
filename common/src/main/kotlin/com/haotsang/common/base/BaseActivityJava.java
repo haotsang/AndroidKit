@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
+@Deprecated(since = "Use BaseVmActivity instead")
 public abstract class BaseActivityJava<VB extends ViewBinding> extends AppCompatActivity {
 
     protected VB mBinding;
