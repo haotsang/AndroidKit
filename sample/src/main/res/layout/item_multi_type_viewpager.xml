@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.haotsang.sample.module.bannerRecyclerview.ViewPageItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <com.haotsang.common.view.NestedScrollHost
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                data="@{data.items}"/>
+        </com.haotsang.common.view.NestedScrollHost>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

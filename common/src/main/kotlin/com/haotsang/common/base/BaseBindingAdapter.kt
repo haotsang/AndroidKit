@@ -51,7 +51,9 @@ abstract class BaseBindingAdapter<T : Any, M : ViewDataBinding> constructor(
         binding?.let {
             binding.lifecycleOwner = mLifecycleOwner
             onBindData(binding, holder, mData[position], position)
-            binding.executePendingBindings()
+            if (binding.hasPendingBindings()) {
+                binding.executePendingBindings()
+            }
         }
     }
 
@@ -71,6 +73,10 @@ abstract class BaseBindingAdapter<T : Any, M : ViewDataBinding> constructor(
         mData.clear()
         mData.addAll(data)
         notifyDataSetChanged()
+    }
+
+    fun getItem(position: Int): T {
+        return mData[position]
     }
 
     fun setOnItemClickListener(listener: ((T, Int) -> Unit)) {

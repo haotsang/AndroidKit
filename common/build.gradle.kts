@@ -57,8 +57,9 @@ dependencies {
     // androidx
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.recyclerview)
     implementation(libs.material)
-    implementation(libs.swiperefreshlayout)
+    api(libs.swiperefreshlayout)
 
     // okhttp
     implementation(libs.gson)
@@ -77,6 +78,7 @@ dependencies {
 
     // glide
     api(libs.glide)
+    api(libs.glide.transformations)
 //    kapt(libs.glide.compiler)
 
 

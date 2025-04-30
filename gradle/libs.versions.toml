@@ -11,6 +11,7 @@ composeBom = "2024.04.01"
 media3 = "1.4.1"
 androidx-activity = "1.7.2"
 androidx-fragment = "1.6.1"
+androidx-recyclerview = "1.2.1"
 retrofit = "2.9.0"
 gson = "2.10.1"
 appcompat = "1.6.1"
@@ -22,6 +23,7 @@ exoplayer = "2.18.1"
 dagger-hilt = "2.46"
 okhttp = "4.11.0"
 glide = "4.16.0"
+glideTransformations = "4.3.0"
 
 [libraries]
 #依赖注入
@@ -48,6 +50,7 @@ exoplayer-ui = { module = "com.google.android.exoplayer:exoplayer-ui", version.r
 
 glide-compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-transformations = { module = "jp.wasabeef:glide-transformations", version.ref = "glideTransformations" }
 
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
@@ -67,6 +70,7 @@ androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecy
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment" }
 androidx-media3-session = { module = "androidx.media3:media3-session", version.ref = "media3" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidx-recyclerview" }
 
 
 #Compose

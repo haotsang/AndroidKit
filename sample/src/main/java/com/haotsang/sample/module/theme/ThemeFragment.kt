@@ -4,27 +4,28 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.SeekBar
-import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
+import androidx.databinding.adapters.SeekBarBindingAdapter.setOnSeekBarChangeListener
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.haotsang.common.base.BaseViewModel
+import com.haotsang.common.base.BaseVmFragment
+import com.haotsang.common.list.RecyclerViewListAdapter
 import com.haotsang.common.utils.ext.dp
 import com.haotsang.sample.R
 import com.haotsang.sample.databinding.FragmentThemeBinding
 
 
-class ThemeFragment : Fragment(R.layout.fragment_theme) {
+class ThemeFragment: BaseVmFragment<FragmentThemeBinding, BaseViewModel>() {
 
+    override val layoutId: Int = R.layout.fragment_theme
+    override val viewModel: BaseViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val binding = DataBindingUtil.bind<FragmentThemeBinding>(view)!!
-        binding.fragment = this
-        binding.lifecycleOwner = this
+        databinding.fragment = this
 
-        binding.tvIndex.apply {
+        databinding.tvIndex.apply {
 
             val textView = this
             textView.text = "100230"
@@ -56,11 +57,11 @@ class ThemeFragment : Fragment(R.layout.fragment_theme) {
 //            )
         }
 
-        binding.seekbar.apply {
+        databinding.seekbar.apply {
             min = 1
             max = 100000
             progress = 1
-            binding.tvIndex.text = progress.toString()
+            databinding.tvIndex.text = progress.toString()
 
 
             setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -70,7 +71,7 @@ class ThemeFragment : Fragment(R.layout.fragment_theme) {
                     fromUser: Boolean
                 ) {
                     if (fromUser) {
-                        binding.tvIndex.text = progress.toString()
+                        databinding.tvIndex.text = progress.toString()
 
 
                     }
@@ -90,17 +91,21 @@ class ThemeFragment : Fragment(R.layout.fragment_theme) {
 
         }
 
-        val mAdapter = MyAdapter(requireContext(), this)
-        mAdapter.setData(
+        val mAdapter = RecyclerViewListAdapter()
+        mAdapter.submitList(
             mutableListOf(
-                "121131",
-                "121131",
-                "121131",
-                "121131",
-                "121131",
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
+                ThemeBindingListItem(title = "121131"),
             )
         )
-        binding.rvList.run {
+        databinding.rvList.run {
             layoutManager = GridLayoutManager(requireContext(), 3)
             adapter = mAdapter
         }

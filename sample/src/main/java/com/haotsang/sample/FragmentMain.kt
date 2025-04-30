@@ -8,10 +8,13 @@ import com.haotsang.common.base.BaseBindingViewHolder
 import com.haotsang.common.base.BaseFragment
 import com.haotsang.sample.databinding.FragmentMainBinding
 import com.haotsang.sample.databinding.ItemBaseQuickAdapterBinding
+import com.haotsang.sample.module.bannerRecyclerview.BannerRecyclerViewFragment
 import com.haotsang.sample.module.collapsingRecyclerview.CollapsingRecyclerviewFragment
 import com.haotsang.sample.module.component.BlurOverlayFragment
+import com.haotsang.sample.module.component.RippleBackgroundFragment
 import com.haotsang.sample.module.component.WickedGradientDrawableFragment
 import com.haotsang.sample.module.theme.ThemeFragment
+import com.haotsang.sample.module.visualizer.VisualizerViewFragment
 
 class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
@@ -24,6 +27,9 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
             "WickedGradientDrawable",
             "BlurOverlay",
             "CollapsingRecyclerview",
+            "RippleBackground",
+            "BannerRecyclerView",
+            "VisualizerView",
         )
         val mAdapter = ListAdapter(requireContext(), this)
         mAdapter.setData(list)
@@ -35,6 +41,9 @@ class FragmentMain : BaseFragment<FragmentMainBinding>(FragmentMainBinding::infl
                 2 -> activity.switchFragment(WickedGradientDrawableFragment())
                 3 -> activity.switchFragment(BlurOverlayFragment())
                 4 -> activity.switchFragment(CollapsingRecyclerviewFragment())
+                5 -> activity.switchFragment(RippleBackgroundFragment())
+                6 -> activity.switchFragment(BannerRecyclerViewFragment())
+                7 -> activity.switchFragment(VisualizerViewFragment())
 
 
                 else -> {

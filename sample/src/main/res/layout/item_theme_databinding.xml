@@ -5,6 +5,10 @@
     <data>
 
         <import type="com.haotsang.sample.module.theme.AppTheme"/>
+
+        <variable
+            name="data"
+            type="com.haotsang.sample.module.theme.ThemeBindingListItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,6 +19,7 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{data.title}"
             android:textColor="@{AppTheme.INSTANCE.content}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
